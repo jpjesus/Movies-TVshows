@@ -1,0 +1,31 @@
+.DS_Store
+*/.DS_Store
+*.DS_Store
+*Breakpoints_v2.xcbkptlist
+*/Breakpoints_v2.xcbkptlist
+Movies&Tvs/.DS_Store
+# User specific files
+Movies&Tvs/Movies&Tvs.xcodeproj/xcuserdata/*
+Movies&Tvs/Movies&Tvs.xcworkspace/xcuserdata/*
+Movies&Tvs/Pods/Pods.xcodeproj/xcuserdata/*
+*/UserInterfaceState.xcuserstate
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+## Aditional 
+*/xcschememanagement.plist
+xcuserdata/
+
+build
+*/!*.xcworkspace/contents.xcworkspacedata
+
+##SwiftLint
+.result.json
