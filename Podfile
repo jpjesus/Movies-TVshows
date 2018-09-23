@@ -7,6 +7,7 @@ target 'Movies&Tvs' do
 
   # Pods for Movies&Tvs
   pod 'Kingfisher'
+  pod 'DropDown', '~> 2.3.2'
   pod 'SwiftyHelpers'
   pod 'RxDataSources'
   pod 'RxSwift'

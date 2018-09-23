@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class TVList: Mappable {
+    
+    var list: [TVShow]?
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        list <- map["results"]
+    }
+}

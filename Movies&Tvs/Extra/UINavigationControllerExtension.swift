@@ -14,7 +14,6 @@ extension UINavigationController {
         transition.type = kCATransitionFade
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
         view.layer.add(transition, forKey: nil)
         pushViewController(viewController, animated: false)
         view.layer.removeAllAnimations()

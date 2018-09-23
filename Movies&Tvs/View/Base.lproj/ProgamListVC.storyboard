@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Egy-Ds-JVm">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,24 +10,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="MQt-C5-C0Z">
+            <objects>
+                <navigationController id="Egy-Ds-JVm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ee6-jg-9Ir">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tby-ZN-YoZ" kind="relationship" relationship="rootViewController" id="l6H-zp-jeM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2i-nq-9dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1242" y="-91"/>
+        </scene>
+        <!--Progam ListVC-->
         <scene sceneID="In8-3X-1a3">
             <objects>
-                <viewController id="tby-ZN-YoZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProgamListVC" id="tby-ZN-YoZ" customClass="ProgamListVC" customModule="Movies_Tvs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLO-7g-6oN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-Lf-1yE">
-                                <rect key="frame" x="147" y="15" width="120" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Svf-9e-oB0"/>
-                                    <constraint firstAttribute="width" constant="120" id="idi-BR-9Qe"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-yx-2rD">
-                                <rect key="frame" x="314" y="50" width="80" height="35"/>
+                                <rect key="frame" x="314" y="89" width="80" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="9wB-g5-PoB"/>
@@ -35,7 +43,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tg-Sn-pKp">
-                                <rect key="frame" x="20" y="50" width="289" height="35"/>
+                                <rect key="frame" x="20" y="89" width="289" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="QPx-iK-jC4"/>
                                 </constraints>
@@ -44,7 +52,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wc7-KG-esO">
-                                <rect key="frame" x="20" y="105" width="374" height="631"/>
+                                <rect key="frame" x="20" y="144" width="374" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0wp-58-cxT">
                                     <size key="itemSize" width="50" height="50"/>
@@ -66,13 +74,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2tg-Sn-pKp" firstAttribute="top" secondItem="eeE-Lf-1yE" secondAttribute="bottom" constant="15" id="MDZ-ys-NK6"/>
+                            <constraint firstItem="2tg-Sn-pKp" firstAttribute="top" secondItem="SXi-ou-YSX" secondAttribute="top" constant="25" id="IHT-R2-dEh"/>
                             <constraint firstItem="SXi-ou-YSX" firstAttribute="trailing" secondItem="Wc7-KG-esO" secondAttribute="trailing" constant="20" id="VxA-PE-p0P"/>
                             <constraint firstItem="Wc7-KG-esO" firstAttribute="leading" secondItem="SXi-ou-YSX" secondAttribute="leading" constant="20" id="Zyl-4b-DZJ"/>
-                            <constraint firstItem="eeE-Lf-1yE" firstAttribute="top" secondItem="gLO-7g-6oN" secondAttribute="top" constant="15" id="mAe-GC-qbx"/>
                             <constraint firstItem="2tg-Sn-pKp" firstAttribute="leading" secondItem="SXi-ou-YSX" secondAttribute="leading" constant="20" id="qbY-nB-FDO"/>
                             <constraint firstItem="Wc7-KG-esO" firstAttribute="top" secondItem="2tg-Sn-pKp" secondAttribute="bottom" constant="20" id="s5k-1d-0ZN"/>
-                            <constraint firstItem="eeE-Lf-1yE" firstAttribute="centerX" secondItem="SXi-ou-YSX" secondAttribute="centerX" id="vAx-K6-w4Y"/>
                             <constraint firstItem="LrF-yx-2rD" firstAttribute="leading" secondItem="2tg-Sn-pKp" secondAttribute="trailing" constant="5" id="vjg-1t-NGO"/>
                             <constraint firstAttribute="trailing" secondItem="LrF-yx-2rD" secondAttribute="trailing" constant="20" id="xkM-cn-AdW"/>
                             <constraint firstItem="LrF-yx-2rD" firstAttribute="centerY" secondItem="2tg-Sn-pKp" secondAttribute="centerY" id="yH9-HP-ZLi"/>
@@ -80,6 +86,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SXi-ou-YSX"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="E1G-Ng-owc"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="progamCollectionView" destination="Wc7-KG-esO" id="MXd-zA-gJh"/>
+                        <outlet property="searchTextField" destination="2tg-Sn-pKp" id="N7B-Bm-22o"/>
+                        <outlet property="sortView" destination="LrF-yx-2rD" id="fWl-us-7Gg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIy-6a-Il8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

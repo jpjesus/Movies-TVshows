@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.2)
   - Differentiator (3.0.2)
+  - DropDown (2.3.2)
   - Kingfisher (4.8.0)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
@@ -29,6 +30,7 @@ PODS:
   - SwiftyHelpers (1.0.0)
 
 DEPENDENCIES:
+  - DropDown (~> 2.3.2)
   - Kingfisher
   - Moya-ObjectMapper/RxSwift
   - Moya/RxSwift
@@ -41,6 +43,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
@@ -52,6 +55,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
   SwiftyHelpers: 3e7adea63ca01a4eab9b5f695e5563a2e2d79a81
 
-PODFILE CHECKSUM: 1090c588a56ba45894ea96239f524fe6bd3bc946
+PODFILE CHECKSUM: 01ed37e7f7e12949bc3030b8d9b28c3bbf73f9ab
 
 COCOAPODS: 1.4.0
