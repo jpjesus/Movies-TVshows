@@ -1,8 +1,8 @@
 //
-//  ProgramList.swift
+//  TVList.swift
 //  Movies&Tvs
 //
-//  Created by Jesus on 9/21/18.
+//  Created by Jesus on 9/22/18.
 //  Copyright © 2018 Jesus Paraada. All rights reserved.
 //
 
