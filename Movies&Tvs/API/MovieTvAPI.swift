@@ -21,6 +21,7 @@ enum MovieTvAPI {
     case getTopRatedTV
     case getMovie(query: String)
     case getTvShow(query:String)
+    case getMovieDetail(id: String)
 }
 
 extension MovieTvAPI: TargetType {
@@ -47,6 +48,8 @@ extension MovieTvAPI: TargetType {
             return "search/movie"
         case .getTvShow:
             return "search/tv"
+        case .getMovieDetail(let id):
+            return "movie/" + id
         }
     }
     
@@ -77,6 +80,10 @@ extension MovieTvAPI: TargetType {
             params ["query"] = showToSearch
             params ["page"] = "1"
             return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .getMovieDetail:
+            params ["api_key"] = apiKey
+            params ["language"] = "en-US"
+              return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
         default:
             params ["api_key"] = apiKey
             params ["language"] = "en-US"

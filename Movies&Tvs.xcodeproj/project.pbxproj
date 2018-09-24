@@ -15,6 +15,8 @@
 		EA1471C021558AB3001B1D0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1471BE21558AB3001B1D0E /* LaunchScreen.storyboard */; };
 		EA1471CB21558AB3001B1D0E /* Movies_TvsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1471CA21558AB3001B1D0E /* Movies_TvsTests.swift */; };
 		EA1471D621558AB3001B1D0E /* Movies_TvsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1471D521558AB3001B1D0E /* Movies_TvsUITests.swift */; };
+		EA14CD252159212800EA7C55 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CD242159212800EA7C55 /* DetailViewModel.swift */; };
+		EA4B24E321588FF4000C457D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B24E221588FF4000C457D /* DetailView.swift */; };
 		EAD5A9B52156E17800DA7EB4 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9B42156E17800DA7EB4 /* ProgramsViewModel.swift */; };
 		EAD5A9BB2156E1BA00DA7EB4 /* ProgamListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */; };
 		EAD5A9BC2156E1BA00DA7EB4 /* ProgamListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */; };
@@ -69,6 +71,8 @@
 		EA1471D121558AB3001B1D0E /* Movies&TvsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movies&TvsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1471D521558AB3001B1D0E /* Movies_TvsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies_TvsUITests.swift; sourceTree = "<group>"; };
 		EA1471D721558AB3001B1D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA14CD242159212800EA7C55 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		EA4B24E221588FF4000C457D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		EAD5A9B42156E17800DA7EB4 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsViewModel.swift; sourceTree = "<group>"; };
 		EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgamListVC.swift; sourceTree = "<group>"; };
 		EAD5A9BA2156E1BA00DA7EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProgamListVC.storyboard; sourceTree = "<group>"; };
@@ -202,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */,
-				EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */,
 				EAD5A9C22156F1D500DA7EB4 /* ProgramListCell.xib */,
 				EAD5A9C42156FFCB00DA7EB4 /* ProgramListCell.swift */,
 			);
@@ -213,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD5A9B42156E17800DA7EB4 /* ProgramsViewModel.swift */,
+				EA14CD242159212800EA7C55 /* DetailViewModel.swift */,
 			);
 			name = ViewModel;
 			path = "New Group";
@@ -221,7 +225,9 @@
 		EAD5A9B72156E1BA00DA7EB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */,
 				EA4B24E121588F9F000C457D /* ProgramListVC */,
+				EA4B24E221588FF4000C457D /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				EAD5A9BE2156E1D100DA7EB4 /* MovieList.swift in Sources */,
 				EAFC216F21558D8B003C2176 /* MovieTvAPI.swift in Sources */,
 				EAF9978F2158771500E544B3 /* UIAppStyles.swift in Sources */,
+				EA4B24E321588FF4000C457D /* DetailView.swift in Sources */,
 				EAD5A9C12156E7BE00DA7EB4 /* UINavigationControllerExtension.swift in Sources */,
 				EAFC217D2155A212003C2176 /* Program.swift in Sources */,
 				EAFC217921559DF0003C2176 /* Movie.swift in Sources */,
@@ -604,6 +611,7 @@
 				EAD5A9C52156FFCB00DA7EB4 /* ProgramListCell.swift in Sources */,
 				EAD5A9CA2157F37A00DA7EB4 /* GlobalEnums.swift in Sources */,
 				EA1471B621558AB3001B1D0E /* AppDelegate.swift in Sources */,
+				EA14CD252159212800EA7C55 /* DetailViewModel.swift in Sources */,
 				EAD5A9C72157103F00DA7EB4 /* TVList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
