@@ -19,6 +19,8 @@ enum MovieTvAPI {
     case getUpcomingMovies
     case getTopTv
     case getTopRatedTV
+    case getMovie(query: String)
+    case getTvShow(query:String)
 }
 
 extension MovieTvAPI: TargetType {
@@ -41,13 +43,16 @@ extension MovieTvAPI: TargetType {
             return "tv/popular"
         case .getTopRatedTV:
             return "tv/top_rated"
+        case .getMovie:
+            return "search/movie"
+        case .getTvShow:
+            return "search/tv"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getTopMovies, .getTopRatedMovies, .getUpcomingMovies,
-             .getTopTv, .getTopRatedTV:
+        default:
             return .get
         }
     }
@@ -57,9 +62,22 @@ extension MovieTvAPI: TargetType {
     }
     
     var task: Task {
+        var params: [String: String] = [:]
         switch self {
+        case .getMovie(let textToSearch):
+            params ["api_key"] = apiKey
+            params ["language"] = "en-US"
+            params ["query"] = textToSearch
+            params ["page"] = "1"
+            params ["enclude_adult"] = "false"
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .getTvShow(let showToSearch):
+            params ["api_key"] = apiKey
+            params ["language"] = "en-US"
+            params ["query"] = showToSearch
+            params ["page"] = "1"
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
         default:
-            var params: [String: String] = [:]
             params ["api_key"] = apiKey
             params ["language"] = "en-US"
             params ["page"] = "1"

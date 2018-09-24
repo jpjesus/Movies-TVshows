@@ -23,6 +23,8 @@
 		EAD5A9C32156F1D500DA7EB4 /* ProgramListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD5A9C22156F1D500DA7EB4 /* ProgramListCell.xib */; };
 		EAD5A9C52156FFCB00DA7EB4 /* ProgramListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9C42156FFCB00DA7EB4 /* ProgramListCell.swift */; };
 		EAD5A9C72157103F00DA7EB4 /* TVList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9C62157103F00DA7EB4 /* TVList.swift */; };
+		EAD5A9CA2157F37A00DA7EB4 /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9C92157F37A00DA7EB4 /* GlobalEnums.swift */; };
+		EAF9978F2158771500E544B3 /* UIAppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9978E2158771500E544B3 /* UIAppStyles.swift */; };
 		EAFC216F21558D8B003C2176 /* MovieTvAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFC216E21558D8B003C2176 /* MovieTvAPI.swift */; };
 		EAFC21742155939C003C2176 /* Tv.json in Resources */ = {isa = PBXBuildFile; fileRef = EAFC21732155939C003C2176 /* Tv.json */; };
 		EAFC217621559410003C2176 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = EAFC217521559410003C2176 /* Movies.json */; };
@@ -75,6 +77,8 @@
 		EAD5A9C22156F1D500DA7EB4 /* ProgramListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramListCell.xib; sourceTree = "<group>"; };
 		EAD5A9C42156FFCB00DA7EB4 /* ProgramListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListCell.swift; sourceTree = "<group>"; };
 		EAD5A9C62157103F00DA7EB4 /* TVList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVList.swift; sourceTree = "<group>"; };
+		EAD5A9C92157F37A00DA7EB4 /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
+		EAF9978E2158771500E544B3 /* UIAppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppStyles.swift; sourceTree = "<group>"; };
 		EAFC216E21558D8B003C2176 /* MovieTvAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTvAPI.swift; sourceTree = "<group>"; };
 		EAFC21732155939C003C2176 /* Tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tv.json; sourceTree = "<group>"; };
 		EAFC217521559410003C2176 /* Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		EA1471B421558AB3001B1D0E /* Movies&Tvs */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5A9C82157F36200DA7EB4 /* Misc */,
 				EAD5A9BF2156E7BE00DA7EB4 /* Extra */,
 				EAD5A9B72156E1BA00DA7EB4 /* View */,
 				EAD5A9B62156E17C00DA7EB4 /* ViewModel */,
@@ -193,6 +198,17 @@
 			path = "Movies&TvsUITests";
 			sourceTree = "<group>";
 		};
+		EA4B24E121588F9F000C457D /* ProgramListVC */ = {
+			isa = PBXGroup;
+			children = (
+				EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */,
+				EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */,
+				EAD5A9C22156F1D500DA7EB4 /* ProgramListCell.xib */,
+				EAD5A9C42156FFCB00DA7EB4 /* ProgramListCell.swift */,
+			);
+			path = ProgramListVC;
+			sourceTree = "<group>";
+		};
 		EAD5A9B62156E17C00DA7EB4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,10 +221,7 @@
 		EAD5A9B72156E1BA00DA7EB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */,
-				EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */,
-				EAD5A9C22156F1D500DA7EB4 /* ProgramListCell.xib */,
-				EAD5A9C42156FFCB00DA7EB4 /* ProgramListCell.swift */,
+				EA4B24E121588F9F000C457D /* ProgramListVC */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +232,15 @@
 				EAD5A9C02156E7BE00DA7EB4 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extra;
+			sourceTree = "<group>";
+		};
+		EAD5A9C82157F36200DA7EB4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				EAD5A9C92157F37A00DA7EB4 /* GlobalEnums.swift */,
+				EAF9978E2158771500E544B3 /* UIAppStyles.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		EAFC216D21558D5E003C2176 /* API */ = {
@@ -572,6 +594,7 @@
 			files = (
 				EAD5A9BE2156E1D100DA7EB4 /* MovieList.swift in Sources */,
 				EAFC216F21558D8B003C2176 /* MovieTvAPI.swift in Sources */,
+				EAF9978F2158771500E544B3 /* UIAppStyles.swift in Sources */,
 				EAD5A9C12156E7BE00DA7EB4 /* UINavigationControllerExtension.swift in Sources */,
 				EAFC217D2155A212003C2176 /* Program.swift in Sources */,
 				EAFC217921559DF0003C2176 /* Movie.swift in Sources */,
@@ -579,6 +602,7 @@
 				EAFC217B2155A1B5003C2176 /* TVShow.swift in Sources */,
 				EAD5A9BB2156E1BA00DA7EB4 /* ProgamListVC.swift in Sources */,
 				EAD5A9C52156FFCB00DA7EB4 /* ProgramListCell.swift in Sources */,
+				EAD5A9CA2157F37A00DA7EB4 /* GlobalEnums.swift in Sources */,
 				EA1471B621558AB3001B1D0E /* AppDelegate.swift in Sources */,
 				EAD5A9C72157103F00DA7EB4 /* TVList.swift in Sources */,
 			);

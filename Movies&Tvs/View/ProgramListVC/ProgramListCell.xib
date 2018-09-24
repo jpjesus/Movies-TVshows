@@ -27,7 +27,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrF-7o-ikb">
-                        <rect key="frame" x="107" y="18.5" width="42" height="35"/>
+                        <rect key="frame" x="107" y="33.5" width="42" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Pbn-3X-xJV"/>
                         </constraints>
@@ -35,17 +35,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-KN-o3q">
-                        <rect key="frame" x="107" y="59.5" width="42" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="XDE-7g-KEX"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-5p-f3A">
-                        <rect key="frame" x="107" y="93.5" width="42" height="25"/>
+                        <rect key="frame" x="107" y="73.5" width="42" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="HgX-7n-ngq"/>
                         </constraints>
@@ -58,17 +49,14 @@
             <constraints>
                 <constraint firstItem="Enj-0i-8sk" firstAttribute="leading" secondItem="k3e-Za-vmJ" secondAttribute="leading" constant="20" id="5B8-Qq-vvY"/>
                 <constraint firstItem="Enj-0i-8sk" firstAttribute="centerY" secondItem="ahN-j4-4HD" secondAttribute="centerY" id="5Km-sZ-xqj"/>
-                <constraint firstItem="Rtb-5p-f3A" firstAttribute="bottom" secondItem="Enj-0i-8sk" secondAttribute="bottom" id="8Av-5L-8l7"/>
-                <constraint firstItem="9dP-KN-o3q" firstAttribute="leading" secondItem="nrF-7o-ikb" secondAttribute="leading" id="9li-r5-4or"/>
+                <constraint firstItem="Rtb-5p-f3A" firstAttribute="bottom" secondItem="Enj-0i-8sk" secondAttribute="bottom" constant="-20" id="8Av-5L-8l7"/>
                 <constraint firstItem="nrF-7o-ikb" firstAttribute="leading" secondItem="Enj-0i-8sk" secondAttribute="trailing" constant="17" id="LtS-gQ-EIr"/>
-                <constraint firstItem="9dP-KN-o3q" firstAttribute="top" secondItem="nrF-7o-ikb" secondAttribute="bottom" constant="6" id="hg2-G9-k1q"/>
-                <constraint firstItem="nrF-7o-ikb" firstAttribute="top" secondItem="Enj-0i-8sk" secondAttribute="top" id="uXf-Fk-D9P"/>
+                <constraint firstItem="nrF-7o-ikb" firstAttribute="top" secondItem="Enj-0i-8sk" secondAttribute="top" constant="15" id="uXf-Fk-D9P"/>
                 <constraint firstItem="Rtb-5p-f3A" firstAttribute="leading" secondItem="nrF-7o-ikb" secondAttribute="leading" id="uxl-vj-6PL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ahN-j4-4HD"/>
             <size key="customSize" width="510" height="137"/>
             <connections>
-                <outlet property="averageVoteLabel" destination="9dP-KN-o3q" id="v9I-4o-oYK"/>
                 <outlet property="posterImg" destination="Enj-0i-8sk" id="7Zd-Yy-trh"/>
                 <outlet property="releaseDateLabel" destination="Rtb-5p-f3A" id="5M2-yO-db3"/>
                 <outlet property="titleLabel" destination="nrF-7o-ikb" id="GJn-Lv-3eL"/>

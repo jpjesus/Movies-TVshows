@@ -16,7 +16,7 @@ protocol Program {
     var isForAdult: Bool? {get set}
     var overview: String? {get set}
     var genreIDs: [Int]? {get set}
-    var averageVote: Double? {get set}
+    var averageVote: String? {get set}
     var popularity: Double? {get set}
     var originalTitle: String? {get set}
 }

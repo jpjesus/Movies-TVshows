@@ -13,7 +13,9 @@ class MovieList: Mappable {
     
     var list: [Movie]?
     
-    required init?(map: Map) {
+     required init?(map: Map) {
+    }
+     init () {
     }
     
     func mapping(map: Map) {

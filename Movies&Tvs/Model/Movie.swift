@@ -18,10 +18,10 @@ final class Movie: Program, Mappable {
     var isForAdult: Bool?
     var overview: String?
     var genreIDs: [Int]?
-    var averageVote: Double?
+    var averageVote: String?
     var popularity: Double?
     var originalTitle: String?
-    var releaseDate: Date?
+    var releaseDate: String?
     
     
     init?(map: Map) {
@@ -29,6 +29,7 @@ final class Movie: Program, Mappable {
     
     func mapping(map: Map) {
         id <- map["id"]
+        title <- map["title"]
         video <- map["video"]
         posterPath <- map["poster_path"]
         isForAdult <- map["adult"]

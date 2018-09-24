@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 final class TVShow: Program, Mappable {
+    
     var id: String?
     var video: Bool?
     var title: String?
@@ -17,17 +18,18 @@ final class TVShow: Program, Mappable {
     var isForAdult: Bool?
     var overview: String?
     var genreIDs: [Int]?
-    var averageVote: Double?
+    var averageVote: String?
     var popularity: Double?
     var originalTitle: String?
     var originCountry: [String]?
-    var airDate: Date?
+    var airDate: String?
     
     init?(map: Map) {
     }
     
     func mapping(map: Map) {
         id <- map["id"]
+        title <- map["name"]
         video <- map["video"]
         posterPath <- map["poster_path"]
         isForAdult <- map["adult"]
@@ -35,7 +37,7 @@ final class TVShow: Program, Mappable {
         airDate <- map["first_air_date"]
         genreIDs <- map["genre_ids"]
         averageVote <- map["vote_average"]
-        originalTitle <- map["original_title"]
+        originalTitle <- map["original_name"]
         popularity <- map["popularity"]
         originCountry <- map["origin_country"]
     }

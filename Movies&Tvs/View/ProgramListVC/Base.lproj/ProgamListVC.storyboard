@@ -34,16 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-yx-2rD">
-                                <rect key="frame" x="314" y="89" width="80" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="9wB-g5-PoB"/>
-                                    <constraint firstAttribute="width" constant="80" id="fnk-q7-fSn"/>
-                                </constraints>
-                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tg-Sn-pKp">
-                                <rect key="frame" x="20" y="89" width="289" height="35"/>
+                                <rect key="frame" x="20" y="84" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="QPx-iK-jC4"/>
                                 </constraints>
@@ -52,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wc7-KG-esO">
-                                <rect key="frame" x="20" y="144" width="374" height="548"/>
+                                <rect key="frame" x="20" y="139" width="374" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0wp-58-cxT">
                                     <size key="itemSize" width="50" height="50"/>
@@ -71,33 +63,52 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMk-1T-STz">
+                                <rect key="frame" x="0.0" y="643" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Movies" image="movieIcon" id="KsZ-rD-7Gd"/>
+                                    <tabBarItem title="TV Shows" image="tvIc" id="LMM-1I-oSd">
+                                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" red="0.88046497109999999" green="0.10279234499999999" blue="0.1735301018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.88046497109999999" green="0.10279234499999999" blue="0.1735301018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2tg-Sn-pKp" firstAttribute="top" secondItem="SXi-ou-YSX" secondAttribute="top" constant="25" id="IHT-R2-dEh"/>
+                            <constraint firstItem="SXi-ou-YSX" firstAttribute="bottom" secondItem="bMk-1T-STz" secondAttribute="bottom" id="0Pg-7V-lRz"/>
+                            <constraint firstItem="SXi-ou-YSX" firstAttribute="trailing" secondItem="bMk-1T-STz" secondAttribute="trailing" id="2dl-TZ-Hh4"/>
+                            <constraint firstItem="2tg-Sn-pKp" firstAttribute="top" secondItem="SXi-ou-YSX" secondAttribute="top" constant="20" id="QgX-5g-BZx"/>
                             <constraint firstItem="SXi-ou-YSX" firstAttribute="trailing" secondItem="Wc7-KG-esO" secondAttribute="trailing" constant="20" id="VxA-PE-p0P"/>
                             <constraint firstItem="Wc7-KG-esO" firstAttribute="leading" secondItem="SXi-ou-YSX" secondAttribute="leading" constant="20" id="Zyl-4b-DZJ"/>
+                            <constraint firstItem="SXi-ou-YSX" firstAttribute="trailing" secondItem="2tg-Sn-pKp" secondAttribute="trailing" constant="20" id="b5F-wz-Wjp"/>
+                            <constraint firstItem="bMk-1T-STz" firstAttribute="top" secondItem="Wc7-KG-esO" secondAttribute="bottom" id="h54-J0-Bc7"/>
                             <constraint firstItem="2tg-Sn-pKp" firstAttribute="leading" secondItem="SXi-ou-YSX" secondAttribute="leading" constant="20" id="qbY-nB-FDO"/>
                             <constraint firstItem="Wc7-KG-esO" firstAttribute="top" secondItem="2tg-Sn-pKp" secondAttribute="bottom" constant="20" id="s5k-1d-0ZN"/>
-                            <constraint firstItem="LrF-yx-2rD" firstAttribute="leading" secondItem="2tg-Sn-pKp" secondAttribute="trailing" constant="5" id="vjg-1t-NGO"/>
-                            <constraint firstAttribute="trailing" secondItem="LrF-yx-2rD" secondAttribute="trailing" constant="20" id="xkM-cn-AdW"/>
-                            <constraint firstItem="LrF-yx-2rD" firstAttribute="centerY" secondItem="2tg-Sn-pKp" secondAttribute="centerY" id="yH9-HP-ZLi"/>
-                            <constraint firstItem="SXi-ou-YSX" firstAttribute="bottom" secondItem="Wc7-KG-esO" secondAttribute="bottom" id="yJ5-OM-rRc"/>
+                            <constraint firstItem="bMk-1T-STz" firstAttribute="leading" secondItem="gLO-7g-6oN" secondAttribute="leading" id="zCa-2w-LIg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SXi-ou-YSX"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="E1G-Ng-owc"/>
+                    <navigationItem key="navigationItem" id="E1G-Ng-owc">
+                        <nil key="title"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="menuBar" destination="bMk-1T-STz" id="Fc4-o7-aE9"/>
                         <outlet property="progamCollectionView" destination="Wc7-KG-esO" id="MXd-zA-gJh"/>
                         <outlet property="searchTextField" destination="2tg-Sn-pKp" id="N7B-Bm-22o"/>
-                        <outlet property="sortView" destination="LrF-yx-2rD" id="fWl-us-7Gg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIy-6a-Il8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418.39999999999998" y="-91.304347826086968"/>
+            <point key="canvasLocation" x="-418.84057971014494" y="-91.304347826086968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movieIcon" width="35" height="35"/>
+        <image name="tvIc" width="35" height="35"/>
+    </resources>
 </document>
