@@ -17,7 +17,7 @@ Simple app that lists Movies and TV shosws routes on a collection view using MVV
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [Moya](https://github.com/Moya/Moya)
-- [RxDataSourcest](https://github.com/RxSwiftCommunity/RxDataSourcest)
+- [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
 
 
 ### Images
