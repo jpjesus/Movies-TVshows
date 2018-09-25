@@ -52,11 +52,13 @@ class ProgamListVC: UIViewController {
     private  var segmentedControl: UISegmentedControl!
     
     private var disposeBag = DisposeBag()
+    private var isChangeMovies = false
     private var viewModel: ProgramsViewModel = ProgramsViewModel()
     private var dataSource:RxCollectionViewSectionedReloadDataSource<ProgramListSection>?
     fileprivate let movieOptions:[String] = ["Popular", "Top Rated", "Upcoming"]
     fileprivate let tvOptions:[String] = ["Popular", "Top Rated"]
     fileprivate var router: RouterProgram!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,7 @@ class ProgamListVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.barTintColor = .semaphoreRed()
+        searchTextField.text = ""
     }
     
     func rxBind() {
@@ -96,6 +99,7 @@ class ProgamListVC: UIViewController {
                 self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
             }).disposed(by: disposeBag)
         
+       
         self.searchTextField.rx
             .text
             .orEmpty
@@ -124,9 +128,18 @@ class ProgamListVC: UIViewController {
             .bind(to: self.progamCollectionView.rx.items(dataSource: dataSource))
             .disposed(by:disposeBag)
         
+        
         self.progamCollectionView.rx
             .setDelegate(self)
             .disposed(by: self.disposeBag)
+        
+        if isChangeMovies {
+        self.progamCollectionView.rx
+            .modelSelected(Movie.self)
+            .subscribe({ [unowned self] program in
+                self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
+            }).disposed(by: disposeBag)
+        }
         self.progamCollectionView.setContentOffset(CGPoint(x:0,y:0), animated: true)
     }
     
@@ -142,6 +155,13 @@ class ProgamListVC: UIViewController {
         self.progamCollectionView.rx
             .setDelegate(self)
             .disposed(by: self.disposeBag)
+        if !isChangeMovies {
+        self.progamCollectionView.rx
+            .modelSelected(TVShow.self)
+            .subscribe({ [unowned self] program in
+                self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
+            }).disposed(by: disposeBag)
+        }
         self.progamCollectionView.setContentOffset(CGPoint(x:0,y:0), animated: true)
     }
     
@@ -175,7 +195,7 @@ class ProgamListVC: UIViewController {
                     case let .next(response):
                         self?.viewModel.rx_TvList.value = response
                     case .error:
-                        self?.retreiveMoviesFromCache()
+                        self?.retreiveTVShowsFromCache()
                     case .completed:
                         SwiftSpinner.hide()
                     }
@@ -209,15 +229,13 @@ extension ProgamListVC: UITabBarDelegate {
             self.viewModel.optionType = .movies
             addSegmentedControlToNavigation(type: .movies)
             segmentChanged()
+            isChangeMovies = false
         } else {
+            
             self.viewModel.optionType = .tvShow
             addSegmentedControlToNavigation(type: .tvShow)
             segmentChanged()
-            self.progamCollectionView.rx
-                .modelSelected(TVShow.self)
-                .subscribe({ [unowned self] program in
-                    self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
-                }).disposed(by: disposeBag)
+            isChangeMovies = true
         }
     }
 }
@@ -237,6 +255,22 @@ extension ProgamListVC {
         }
         SwiftSpinner.hide()
         if self.viewModel.rx_MovieList.value == nil {
+            self.showOfflineAlert()
+        }
+    }
+    
+    func retreiveTVShowsFromCache() {
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            self.viewModel.retreiveTvShowsFromCache(from: .popularTvShows)
+        case 1:
+            self.viewModel.retreiveTvShowsFromCache(from: .topRateTvShows)
+        default:
+            return
+        }
+        SwiftSpinner.hide()
+        if self.viewModel.rx_TvList.value == nil {
             self.showOfflineAlert()
         }
     }
@@ -336,7 +370,7 @@ extension ProgamListVC {
                             self?.viewModel.rx_TvList.value = response
                             self?.viewModel.saveTvShowsIncache(list: response)
                         case .error:
-                            self?.retreiveMoviesFromCache()
+                            self?.retreiveTVShowsFromCache()
                         case .completed:
                             SwiftSpinner.hide()
                         }
@@ -349,7 +383,7 @@ extension ProgamListVC {
                             self?.viewModel.rx_TvList.value = response
                             self?.viewModel.saveTvShowsIncache(list: response)
                         case .error:
-                            self?.retreiveMoviesFromCache()
+                            self?.retreiveTVShowsFromCache()
                         case .completed:
                             SwiftSpinner.hide()
                         }

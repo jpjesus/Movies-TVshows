@@ -1,0 +1,84 @@
+{
+  "adult": false,
+  "backdrop_path": "/f4E0ocYeToEuXvczZv6QArrMDJ.jpg",
+  "belongs_to_collection": {
+    "id": 399,
+    "name": "Predator Collection",
+    "poster_path": "/6Z7lASptoiRVxiCFvZaFgH9qp7u.jpg",
+    "backdrop_path": "/fXVzk9OxQwROCuiWvd0Cv76qmZi.jpg"
+  },
+  "budget": 88000000,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Horror"
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 35,
+      "name": "Comedy"
+    }
+  ],
+  "homepage": "https://www.foxmovies.com/movies/the-predator",
+  "id": 346910,
+  "imdb_id": "tt3829266",
+  "original_language": "en",
+  "original_title": "The Predator",
+  "overview": "From the outer reaches of space to the small-town streets of suburbia, the hunt comes home. Now, the universe’s most lethal hunters are stronger, smarter and deadlier than ever before, having genetically upgraded themselves with DNA from other species. When a young boy accidentally triggers their return to Earth, only a ragtag crew of ex-soldiers and a disgruntled science teacher can prevent the end of the human race.",
+  "popularity": 202.979,
+  "poster_path": "/wMq9kQXTeQCHUZOG4fAe5cAxyUA.jpg",
+  "production_companies": [
+    {
+      "id": 1302,
+      "logo_path": "/kQZtJdyphCmq292iGDqlUx0yk2D.png",
+      "name": "Davis Entertainment",
+      "origin_country": "US"
+    },
+    {
+      "id": 22213,
+      "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
+      "name": "TSG Entertainment",
+      "origin_country": "US"
+    },
+    {
+      "id": 25,
+      "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+      "name": "20th Century Fox",
+      "origin_country": "US"
+    },
+    {
+      "id": 1786,
+      "logo_path": "/joLFuCWg9e2lweYnFQtRPJKSLlI.png",
+      "name": "Dark Castle Entertainment",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2018-09-13",
+  "revenue": 56594362,
+  "runtime": 107,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "The Hunt Has Evolved",
+  "title": "The Predator",
+  "video": false,
+  "vote_average": 5.5,
+  "vote_count": 299
+}

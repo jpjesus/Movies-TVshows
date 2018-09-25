@@ -74,7 +74,34 @@ extension MovieTvAPI: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .getTopMovies:
+            guard let url = Bundle.main.url(forResource: "Movies", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                    return Data()
+            }
+            return data
+        case .getTopTv:
+            guard let url = Bundle.main.url(forResource: "Tv", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                    return Data()
+            }
+            return data
+        case .getMovieDetail:
+            guard let url = Bundle.main.url(forResource: "Movie", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                    return Data()
+            }
+            return data
+        case .getTvShowDetail:
+            guard let url = Bundle.main.url(forResource: "TvShow", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                    return Data()
+            }
+            return data
+        default:
+            return Data()
+        }
     }
     
     var task: Task {

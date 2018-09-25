@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Movies_TvsUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Movies_TvsUITestsVersionString[];
+FOUNDATION_EXPORT double DropDownVersionNumber;
+FOUNDATION_EXPORT const unsigned char DropDownVersionString[];
 

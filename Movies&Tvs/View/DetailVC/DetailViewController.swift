@@ -84,6 +84,9 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.barTintColor = .semaphoreRed()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
+        self.title = program?.title
     }
     
     func rxbind() {
@@ -137,14 +140,13 @@ class DetailViewController: UIViewController {
     }
     
     func prepareView(_ program: Program) {
-        guard let img = program.posterPath else {return}
+       
         switch program {
         case is Movie:
             guard let movie = program as? Movie,
                 let releaseDate = movie.releaseDate else {
                     return
             }
-            setImage(path: img)
             setGenres(genres: movie.genre)
             releaseDateLabel.text = "Release date: " + releaseDate
             tagLineLabel.text = movie.tagline
@@ -154,7 +156,6 @@ class DetailViewController: UIViewController {
                 let releaseDate = show.airDate else {
                     return
             }
-            setImage(path: img)
             setGenres(genres: show.genre)
             releaseDateLabel.text = "First air date: " + releaseDate
             tagLineLabel.isHidden = true
@@ -167,6 +168,8 @@ class DetailViewController: UIViewController {
         genreLabel.isHidden = false
         contentSpinner.stopAnimating()
         contentSpinner.isHidden = true
+        guard let img = program.posterPath else {return}
+        setImage(path: img)
     }
     
     private func setGenres(genres: [Genre]?) {
