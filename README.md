@@ -18,5 +18,8 @@ Simple app that lists Movies and TV shosws routes on a collection view using MVV
 - [RxDataSourcest](https://github.com/RxSwiftCommunity/RxDataSourcest)
 
 
-## Images
-![Image description](/Users/usuario/Desktop/Screen Shot 2018-09-24 at 19.58.25.pngimage)
+### Images
+
+- Main view Controller
+
+<img width="516" alt="screen shot 2018-09-24 at 19 58 25" src="https://user-images.githubusercontent.com/17602606/45992175-f5950900-c04d-11e8-87e5-11e17d5f5745.png">
