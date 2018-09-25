@@ -16,7 +16,9 @@
 		EA1471CB21558AB3001B1D0E /* Movies_TvsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1471CA21558AB3001B1D0E /* Movies_TvsTests.swift */; };
 		EA1471D621558AB3001B1D0E /* Movies_TvsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1471D521558AB3001B1D0E /* Movies_TvsUITests.swift */; };
 		EA14CD252159212800EA7C55 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CD242159212800EA7C55 /* DetailViewModel.swift */; };
-		EA4B24E321588FF4000C457D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B24E221588FF4000C457D /* DetailView.swift */; };
+		EA14CD27215959CC00EA7C55 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CD26215959CC00EA7C55 /* Router.swift */; };
+		EA14CD2C21598C6900EA7C55 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CD2B21598C6900EA7C55 /* Video.swift */; };
+		EA4B24E321588FF4000C457D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B24E221588FF4000C457D /* DetailViewController.swift */; };
 		EAD5A9B52156E17800DA7EB4 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9B42156E17800DA7EB4 /* ProgramsViewModel.swift */; };
 		EAD5A9BB2156E1BA00DA7EB4 /* ProgamListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */; };
 		EAD5A9BC2156E1BA00DA7EB4 /* ProgamListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */; };
@@ -72,7 +74,9 @@
 		EA1471D521558AB3001B1D0E /* Movies_TvsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies_TvsUITests.swift; sourceTree = "<group>"; };
 		EA1471D721558AB3001B1D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA14CD242159212800EA7C55 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		EA4B24E221588FF4000C457D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		EA14CD26215959CC00EA7C55 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		EA14CD2B21598C6900EA7C55 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EA4B24E221588FF4000C457D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EAD5A9B42156E17800DA7EB4 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsViewModel.swift; sourceTree = "<group>"; };
 		EAD5A9B82156E1BA00DA7EB4 /* ProgamListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgamListVC.swift; sourceTree = "<group>"; };
 		EAD5A9BA2156E1BA00DA7EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProgamListVC.storyboard; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		EA1471B421558AB3001B1D0E /* Movies&Tvs */ = {
 			isa = PBXGroup;
 			children = (
+				EA14CD28215959DD00EA7C55 /* Navigation */,
 				EAD5A9C82157F36200DA7EB4 /* Misc */,
 				EAD5A9BF2156E7BE00DA7EB4 /* Extra */,
 				EAD5A9B72156E1BA00DA7EB4 /* View */,
@@ -202,6 +207,14 @@
 			path = "Movies&TvsUITests";
 			sourceTree = "<group>";
 		};
+		EA14CD28215959DD00EA7C55 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EA14CD26215959CC00EA7C55 /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		EA4B24E121588F9F000C457D /* ProgramListVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +240,7 @@
 			children = (
 				EAD5A9B92156E1BA00DA7EB4 /* ProgamListVC.storyboard */,
 				EA4B24E121588F9F000C457D /* ProgramListVC */,
-				EA4B24E221588FF4000C457D /* DetailView.swift */,
+				EA4B24E221588FF4000C457D /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 				EAFC217A2155A1B5003C2176 /* TVShow.swift */,
 				EAFC217C2155A212003C2176 /* Program.swift */,
 				EAD5A9C62157103F00DA7EB4 /* TVList.swift */,
+				EA14CD2B21598C6900EA7C55 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -524,6 +538,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyHelpers/SwiftyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -540,6 +555,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -601,7 +617,7 @@
 				EAD5A9BE2156E1D100DA7EB4 /* MovieList.swift in Sources */,
 				EAFC216F21558D8B003C2176 /* MovieTvAPI.swift in Sources */,
 				EAF9978F2158771500E544B3 /* UIAppStyles.swift in Sources */,
-				EA4B24E321588FF4000C457D /* DetailView.swift in Sources */,
+				EA4B24E321588FF4000C457D /* DetailViewController.swift in Sources */,
 				EAD5A9C12156E7BE00DA7EB4 /* UINavigationControllerExtension.swift in Sources */,
 				EAFC217D2155A212003C2176 /* Program.swift in Sources */,
 				EAFC217921559DF0003C2176 /* Movie.swift in Sources */,
@@ -609,6 +625,8 @@
 				EAFC217B2155A1B5003C2176 /* TVShow.swift in Sources */,
 				EAD5A9BB2156E1BA00DA7EB4 /* ProgamListVC.swift in Sources */,
 				EAD5A9C52156FFCB00DA7EB4 /* ProgramListCell.swift in Sources */,
+				EA14CD2C21598C6900EA7C55 /* Video.swift in Sources */,
+				EA14CD27215959CC00EA7C55 /* Router.swift in Sources */,
 				EAD5A9CA2157F37A00DA7EB4 /* GlobalEnums.swift in Sources */,
 				EA1471B621558AB3001B1D0E /* AppDelegate.swift in Sources */,
 				EA14CD252159212800EA7C55 /* DetailViewModel.swift in Sources */,

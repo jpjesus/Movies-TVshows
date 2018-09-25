@@ -35,7 +35,6 @@ class ProgamListVC: UIViewController {
             searchTextField.autocorrectionType = .no
             searchTextField.clearButtonMode = .whileEditing
             searchTextField.returnKeyType = .search
-            
         }
     }
     @IBOutlet weak var menuBar: UITabBar!
@@ -46,28 +45,30 @@ class ProgamListVC: UIViewController {
             progamCollectionView <= ProgramListCell.self
         }
     }
+    enum Route: String {
+        case programDetail
+    }
     
     private  var segmentedControl: UISegmentedControl!
     
     private var disposeBag = DisposeBag()
     private var viewModel: ProgramsViewModel = ProgramsViewModel()
     private var dataSource:RxCollectionViewSectionedReloadDataSource<ProgramListSection>?
-    fileprivate var optionType: ProgramOption?
     fileprivate let movieOptions:[String] = ["Popular", "Top Rated", "Upcoming"]
     fileprivate let tvOptions:[String] = ["Popular", "Top Rated"]
+    fileprivate var router: RouterProgram!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rxBind()
-        menuBar.selectedItem =  menuBar.items?[0]
-        optionType = .movies
-        menuBar.delegate = self
-        addSegmentedControlToNavigation(type: .movies)
+        prepareUI()
+        router = RouterProgram(viewModel: viewModel)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = .semaphoreRed()
     }
     
     func rxBind() {
@@ -89,11 +90,11 @@ class ProgamListVC: UIViewController {
         dataSource = createDataSource()
         setMovieCollection()
         
-        //        self.progamCollectionView.rx
-        //            .modelSelected(Program.self)
-        //            .subscribe(onNext: { [unowned self] taxi in
-        //                self.showMap(for: taxi)
-        //            }).disposed(by: self.disposeBag)
+        self.progamCollectionView.rx
+            .modelSelected(Movie.self)
+            .subscribe({ [unowned self] program in
+                self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
+            }).disposed(by: disposeBag)
         
         self.searchTextField.rx
             .text
@@ -104,6 +105,14 @@ class ProgamListVC: UIViewController {
                 }
             }).bind(to: self.viewModel.rx_onlineSearch)
             .disposed(by: disposeBag)
+    }
+    
+    private func prepareUI() {
+        menuBar.selectedItem =  menuBar.items?[0]
+        self.viewModel.optionType = .movies
+        menuBar.delegate = self
+        addSegmentedControlToNavigation(type: .movies)
+
     }
     
     private func setMovieCollection() {
@@ -146,7 +155,7 @@ class ProgamListVC: UIViewController {
     }
     
     private func onlineSearch() {
-        if optionType == .movies {
+        if self.viewModel.optionType == .movies {
             self.viewModel.getMovieList(by: .onlineSearchMovie)
                 .subscribe({ [weak self] event in
                     switch event {
@@ -197,13 +206,18 @@ extension ProgamListVC: UICollectionViewDelegateFlowLayout {
 extension ProgamListVC: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item == (menuBar.items)?[0]{
-            optionType = .movies
+            self.viewModel.optionType = .movies
             addSegmentedControlToNavigation(type: .movies)
             segmentChanged()
         } else {
-            optionType = .tvShow
+            self.viewModel.optionType = .tvShow
             addSegmentedControlToNavigation(type: .tvShow)
             segmentChanged()
+            self.progamCollectionView.rx
+                .modelSelected(TVShow.self)
+                .subscribe({ [unowned self] program in
+                    self.router.route(to: Route.programDetail.rawValue, from: self, parameters: program.element)
+                }).disposed(by: disposeBag)
         }
     }
 }
@@ -263,12 +277,13 @@ extension ProgamListVC {
         
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
-        segmentedControl.tintColor = .semaphoreRed()
+        segmentedControl.tintColor = .white
+        segmentedControl.backgroundColor = .semaphoreRed()
         navigationItem.titleView = segmentedControl
     }
     
     @objc private func segmentChanged() {
-        if optionType == .movies {
+        if self.viewModel.optionType == .movies {
             switch segmentedControl.selectedSegmentIndex {
             case 0:
                 self.viewModel.getMovieList(by: .popularMovies)

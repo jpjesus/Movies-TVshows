@@ -19,6 +19,7 @@ class ProgramsViewModel {
     var rx_MovieList = Variable<MovieList?>(nil)
     var rx_TvList = Variable<TVList?>(nil)
     var rx_onlineSearch = Variable("")
+    var optionType: ProgramOption?
     
     private var programType: ProgramType?
     private var movieCache: NSCache <AnyObject, MovieList>?

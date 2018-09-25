@@ -15,6 +15,7 @@ target 'Movies&Tvs' do
   pod 'Moya/RxSwift'
   pod 'Moya-ObjectMapper/RxSwift'
   pod 'SwiftSpinner'
+  pod 'youtube-ios-player-helper'
 
   target 'Movies&TvsTests' do
     inherit! :search_paths

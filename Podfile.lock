@@ -28,6 +28,7 @@ PODS:
   - RxSwift (4.2.0)
   - SwiftSpinner (1.5.0)
   - SwiftyHelpers (1.0.0)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - DropDown (~> 2.3.2)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - RxSwift
   - SwiftSpinner
   - SwiftyHelpers
+  - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -54,7 +56,8 @@ SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
   SwiftyHelpers: 3e7adea63ca01a4eab9b5f695e5563a2e2d79a81
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 01ed37e7f7e12949bc3030b8d9b28c3bbf73f9ab
+PODFILE CHECKSUM: 70e5266dc05f97279a61653cba825de65504e740
 
 COCOAPODS: 1.4.0

@@ -11,13 +11,13 @@ import ObjectMapper
 
 final class TVShow: Program, Mappable {
     
-    var id: String?
+    var id: Int?
     var video: Bool?
     var title: String?
     var posterPath: String?
     var isForAdult: Bool?
     var overview: String?
-    var genreIDs: [Int]?
+    var genre: [Genre]?
     var averageVote: String?
     var popularity: Double?
     var originalTitle: String?
@@ -35,7 +35,7 @@ final class TVShow: Program, Mappable {
         isForAdult <- map["adult"]
         overview <- map["overview"]
         airDate <- map["first_air_date"]
-        genreIDs <- map["genre_ids"]
+        genre <- map["genres"]
         averageVote <- map["vote_average"]
         originalTitle <- map["original_name"]
         popularity <- map["popularity"]
